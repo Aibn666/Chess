@@ -48,6 +48,14 @@ const pieces = {
 
 //array de dos dimensiones para las celdas
 
+//inicializo el tablero
+const boardMatrix = [];
+for (let x = 0; x < FILES; x += 1){
+    boardMatrix[x] = [];
+    for (let y = 0; y < RANKS; y += 1){
+        boardMatrix[x][y] = null;
+    }
+}
 
 //pinto las celdas
 const renderBoard = ()=> {
@@ -86,14 +94,6 @@ const renderBoard = ()=> {
     }
 }
 
-//inicializo el tablero
-const boardMatrix = [];
-for (let x = 0; x < FILES; x += 1){
-    boardMatrix[x] = [];
-    for (let y = 0; y < RANKS; y += 1){
-        boardMatrix[x][y] = null;
-    }
-}
 
 //ubicar piezas
 for (let i=0; i < RANKS; i += 1){
