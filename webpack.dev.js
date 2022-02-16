@@ -5,7 +5,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
-    node: 'development',
+    mode: 'development',
     output: {
         filename: '[name].js',
         path: path.join(__dirname, 'dist'),
