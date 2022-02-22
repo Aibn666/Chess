@@ -130,7 +130,7 @@ class Board {
         this.previousCell.setPiece(null);
         this.previousCell = null;
         selectedCell.setSelected(true);
-        this.flip = !this.flip;
+        //this.flip = !this.flip;
         this.clearAvailableMovement();
         this.render();
     }

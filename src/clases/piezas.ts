@@ -13,6 +13,13 @@ class Piece {
         this.token = token;
     }
 
+    getCellFromCoords(position: [number,number],boardMatrix: Cell[][]): Cell | null{
+        const [x , y] = position;
+        const rank = boardMatrix[x] || [];
+        const cell = rank[y];
+        return cell;
+    }
+
     availableMovement(position: [number,number],boardMatrix: Cell[][]) {
         throw new Error(`Missing available movement in ${this.type}`);
         
