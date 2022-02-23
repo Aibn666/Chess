@@ -127,6 +127,9 @@ class Board {
         }
         selectedCell.setPiece(this.previousCell.piece);
         this.selectedCells.push(selectedCell);
+        //cambio estado de la pieza para saber si ya movio su lugar
+        this.previousCell.piece.moved = true;
+        //limpio la pieza
         this.previousCell.setPiece(null);
         this.previousCell = null;
         selectedCell.setSelected(true);
@@ -205,10 +208,12 @@ class Board {
                 const cell  = this.boardMatrix[x][y];
                 if (cell.selected){
                     this.ctx.fillStyle = '#FFDC4E';
+                    this.ctx.globalAlpha = 0.5;
                     this.ctx.fillRect(drawX * this.cellWidth,
                         drawY * this.cellHeith,
                         this.cellWidth, 
                         this.cellHeith);
+                        this.ctx.globalAlpha = 1;
                 }
 
                 if (cell.availableMove){
