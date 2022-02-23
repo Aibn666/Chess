@@ -16,7 +16,7 @@ class Pawn extends Piece {
             cell.setAvailableMovement(true);
         }
 
-        for(let i = 0; i<2; i += 1){
+        for(let i = 0; i < 2; i += 1){
             const takeCell = this.getCellFromCoords(
                 [x + (i ? 1 : -1) , y + (1 * yDirection)],
                  boardMatrix
