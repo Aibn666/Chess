@@ -33,6 +33,10 @@ class Piece {
         }
     }
 
+    checkValidCell(cell: Cell): boolean {
+        return cell && !(cell.piece && cell.piece.color == this.color);
+    }
+
     availableMovement(position: [number,number],boardMatrix: Cell[][]) {
         throw new Error(`Missing available movement in ${this.type}`);
         
