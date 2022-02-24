@@ -8,35 +8,15 @@ class Rook extends Piece {
     }
     availableMovement(position: [number, number], boardMatrix: Cell[][]){
         const [x, y] = position;
-        //check files
-        for(let i = 1; i < boardMatrix.length; i += 1){
-            const cell = this.getCellFromCoords([x + i, y], boardMatrix);
-            if(!cell) break;
-            if(cell.piece && cell.piece.color == this.color)break;
-            cell.setAvailableMovement(true);
-            if(cell.piece)break;
-        }
-        for(let i = 1; i < boardMatrix.length; i += 1){
-            const cell = this.getCellFromCoords([x - i, y], boardMatrix);
-            if(!cell) break;
-            if(cell.piece && cell.piece.color == this.color)break;
-            cell.setAvailableMovement(true);
-            if(cell.piece)break;
-        }
-        for(let i = 1; i < boardMatrix.length; i += 1){
-            const cell = this.getCellFromCoords([x, y + i], boardMatrix);
-            if(!cell) break;
-            if(cell.piece && cell.piece.color == this.color)break;
-            cell.setAvailableMovement(true);
-            if(cell.piece)break;
-        }
-        for(let i = 1; i < boardMatrix.length; i += 1){
-            const cell = this.getCellFromCoords([x, y - i], boardMatrix);
-            if(!cell) break;
-            if(cell.piece && cell.piece.color == this.color)break;
-            cell.setAvailableMovement(true);
-            if(cell.piece)break;
-        }
+        //check direction
+        //up
+        this.checkDirection(position, [0, -1], boardMatrix);
+        //right
+        this.checkDirection(position, [1, 0], boardMatrix);
+        //down
+        this.checkDirection(position, [0, 1], boardMatrix);
+        //left
+        this.checkDirection(position, [-1, 0], boardMatrix);
     }
 }
 
