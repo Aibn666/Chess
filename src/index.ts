@@ -8,8 +8,8 @@ import Queen from "./clases/piezas/Queen";
 import Rook from "./clases/piezas/Rook";
 import { Color } from "./types/theme";
 
-const WIDTH = 800;
-const HEIGHT = 800;
+const WIDTH = 500;
+const HEIGHT = 500;
 
 //filas y columnas
 
